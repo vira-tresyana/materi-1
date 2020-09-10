@@ -11,28 +11,30 @@ class Mobil {
 	}
 }
 
+class BMW extends Mobil{
 
-$bmw = new Mobil;
+}
+
+class Tesla extends Mobil{
+	function selfParking(){
+		echo "Parkir Sendiri";
+
+	}
+}
+
+$bmw = new BMW;
 $bmw->merk = "BMW";
 $bmw->tipe = "320i";
 $bmw->mesin = "2000cc";
 $bmw->max_speed = "280/h";
 
-$bmw2 = new Mobil;
-$bmw2->merk = "BMW";
-$bmw2->tipe = "320i";
-$bmw2->mesin = "2000cc";
-$bmw2->max_speed = "280/h";
+$tesla = new Tesla;
+$tesla->merk = "Tesla";
+$tesla->tipe = "Model X";
+$tesla->mesin = "2000cc";
+$tesla->max_speed = "280/h";
 
-echo "$bmw2->tipe";
-echo "<br>";
-echo "$bmw->tipe";
-
-if($bmw === $bmw2){
-	echo "sama";
-}else{
-	echo "tidak";
-}
+ echo $tesla->kecepatanMaksimal();
 
 
 
