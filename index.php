@@ -1,54 +1,105 @@
 <?php
 
-class Mobil {
-	private  $merk, $tipe, $display, $ram, $harga;
+include "Animal.php"; 
 
-	public function cetakTipe(){
-		return $this->tipe;
-	}
-	public function kecepatanmaksimal(){
-		return "kecepatan maksimal dari mobil ini adalah ".$this->max_speed;
-	}
 
-	function injekGas(){
-		return "mengalirkan bensin ke ruang bakar, rpm naik, roda berputar";
+class Hewan
+{
+	public $momo, $doggo, $zya, $masha, $bisa_terbang;
 
+	public function bersuara(){
+		return "Hewan Ini Bersuara : ";
+	} 
+}
+
+
+class Kucing extends Hewan
+{
+	public $bisa_terbang = "Hewan ini tidak bisa terbang";
+
+	public function bersuara()
+	{
+		return "Meoww";
 	}
 }
 
-class BMW extends Mobil{
 
+class Anjing extends Hewan
+{
+	
+	public $bisa_terbang = "Hewan ini tidak bisa terbang";
+
+	public function bersuara()
+	{
+		return "Guk Guk";
+	}
 }
 
-class Tesla extends Mobil{
-	function selfParking(){
-		echo "Parkir Sendiri";
-
+class Elang extends Hewan
+{
+	public $bisa_terbang = "Hewan ini bisa terbang";
+	
+	public function bersuara()
+	{
+		return "Miippp";
 	}
-
-	function injekGas(){
-		return parent ::injekGas();
-		return "mengalirkan listrik ke dinamo, rpm naik, roda berputar";
-	}
-
 }
 
-$bmw = new BMW;
-$bmw->merk = "BMW";
-$bmw->tipe = "320i";
-$bmw->mesin = "2000cc";
-$bmw->max_speed = "280/h";
 
-$tesla = new Tesla;
-$tesla->merk = "Tesla";
-$tesla->tipe = "Model X";
-$tesla->mesin = "2000cc";
-$tesla->max_speed = "280/h";
 
- echo "BMW : ".$bmw->injekGas();
- echo "<br>";
- echo "<br>";
- echo "Tesla :".$tesla->injekGas();
+class Angsa extends Hewan
+{
+	public $bisa_terbang = "Hewan ini bisa terbang";
+	
+	public function bersuara()
+	{
+		return "kwaaakk";
+	}
+}
+
+$momo = new Kucing;
+$momo->jumlah_kaki = 4;
+echo "Momo Adalah Kucing";
+echo $momo->jumlah_kaki.;
+echo $momo->bisa_terbang.;
+$momo->bersuara()."<br>";
+
+echo "<hr>";
+
+$doggo = new Anjing;
+$doggo->jumlah_kaki = 4;
+echo "Doggo Adalah Anjing";
+echo $doggo->jumlah_kaki.;
+echo $doggo->bisa_terbang;
+$doggo->bersuara().;
+
+echo "<hr>";
+
+$zya = new Elang;
+$zya->jumlah_kaki = 2;
+echo "Zya Adalah Elang <br>";
+echo $zya->jumlah_kaki."<br>";
+
+$masha = new Elang;
+$masha->jumlah_kaki = 2;
+echo "Zya Adalah Elang <br>";
+echo $zya->bisa_terbang.<br>";
+$zya->bersuara()."<br>";
+
+echo "<hr>";
+echo $masha->jumlah_kaki."<br>";
+echo $masha->bisa_terbang.<br>";
+$zya->bersuara()."<br>";
+
+
+
+
+
+
+
+
+
+
 
 
 
